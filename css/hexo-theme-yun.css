@@ -133,7 +133,7 @@ body::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0-blur-30px.jpg");
+  background-image: url("https://pic1.zhimg.com/v2-f32255a82a1192d6dc0956514a880941_r.jpg?source=1940ef5c");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1943,7 +1943,7 @@ pre[class*='language-']:hover .copy-btn {
     color: var(--hty-text-color);
   }
   :root:not([data-user-color-scheme]) body::before {
-    background-image: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/galaxy.jpg");
+    background-image: url("https://pic1.zhimg.com/v2-cd1417169f54c20ec83f764795c013a5_r.jpg?source=1940ef5c");
   }
   :root:not([data-user-color-scheme]) .char {
     background-color: rgba(0,0,0,0.5);
@@ -2019,7 +2019,7 @@ pre[class*='language-']:hover .copy-btn {
   color: var(--hty-text-color);
 }
 [data-user-color-scheme='dark'] body::before {
-  background-image: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/galaxy.jpg");
+  background-image: url("https://pic1.zhimg.com/v2-cd1417169f54c20ec83f764795c013a5_r.jpg?source=1940ef5c");
 }
 [data-user-color-scheme='dark'] .char {
   background-color: rgba(0,0,0,0.5);
