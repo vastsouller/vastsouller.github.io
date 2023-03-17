@@ -8,20 +8,7 @@
     <link href="/2023/03/17/ChatGPT-test/"/>
     <url>/2023/03/17/ChatGPT-test/</url>
     
-    <content type="html"><![CDATA[<iframe src='/ChatGPT-test.html' width="100%" height="100px"></iframe>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2023/03/17/ChatGPT-test/"/>
-    <url>/2023/03/17/ChatGPT-test/</url>
-    
-    <content type="html"><![CDATA[<!DOCTYPE html><html><head>  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script></head><body>  <h1>Chat with GPT-3.5</h1>  <div id="chat"></div>  <div class="chat-input">    <input type="text" id="input" placeholder="Enter your message" />    <button onclick="sendMessage()">Send</button>  </div>  <script>    // 用于授权 API 请求的密钥    const apiKey = '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';    // 用于调用 GPT-3.5 API 的函数    async function generateText(prompt) {      const url = 'https://api.openai.com/v1/engines/davinci-codex/completions';      const headers = {        'Content-Type': 'application/json',        Authorization: `Bearer ${apiKey}`      };      const data = {        prompt,        max_tokens: 50,        n: 1,        stop: '\n'      };      const response = await axios.post(url, data, {        headers      });      return response.data.choices[0].text;    }    // 在聊天界面中添加一条消息    function addMessage(text, sender) {      const chat = document.getElementById('chat');      const message = document.createElement('div');      message.innerText = text;      message.classList.add(sender);      chat.appendChild(message);    }    // 发送消息的处理函数    async function sendMessage() {      // 获取输入的文本      const input = document.getElementById('input');      const text = input.value;      input.value = '';      // 发送消息并添加到聊天界面      addMessage(text, 'user');      const generatedText = await generateText(text);      addMessage(generatedText, 'bot');    }    // 监听回车键按下事件，按下后自动发送消息    const input = document.getElementById('input');    input.addEventListener('keyup', function (event) {      if (event.key === 'Enter') {        event.preventDefault();        sendMessage();      }    });  </script>  <style>    #chat {      height: 400px;      width: 100%;      overflow: scroll;    }    .user {      width: 100%;      background-color: #fff;      color: #333;      margin-bottom: 10px;    }    .bot {      width: 100%;      background-color: #f1f1f1;      color: #333;      margin-bottom: 10px;    }    .chat-input {      display: flex;      align-items: center;      padding: 10px;      background-color: #f4f4f4;      border-top: 1px solid #ddd;    }    .chat-input input[type="text"] {      flex: 1;      margin-right: 10px;      padding: 10px;      border: none;      border-radius: 5px;      font-size: 16px;    }    .chat-input button {      padding: 10px 20px;      border: none;      border-radius: 5px;      background-color: #007bff;      color: #fff;      font-size: 16px;      cursor: pointer;    }  </style></body></html>]]></content>
+    <content type="html"><![CDATA[<h5 id="以下是关于ChatGPt的一些尝试"><a href="#以下是关于ChatGPt的一些尝试" class="headerlink" title="以下是关于ChatGPt的一些尝试"></a>以下是关于ChatGPt的一些尝试</h5><iframe src='/html/ChatGPT-test.html' width="100%" height="500px"></iframe>]]></content>
     
     
     
