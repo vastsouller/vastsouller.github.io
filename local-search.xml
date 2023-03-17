@@ -4,11 +4,24 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2023/03/16/hello-world/"/>
-    <url>/2023/03/16/hello-world/</url>
+    <title>ChatGPT-test</title>
+    <link href="/2023/03/17/ChatGPT-test/"/>
+    <url>/2023/03/17/ChatGPT-test/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><iframe src="http://localhost:4000/2023/03/16/hello-world/" width="100%" height="1000px" scrolling="no"></iframe>]]></content>
+    <content type="html"><![CDATA[<iframe src='/ChatGPT-test.html' width="100%" height="100px"></iframe>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/03/17/ChatGPT-test/"/>
+    <url>/2023/03/17/ChatGPT-test/</url>
+    
+    <content type="html"><![CDATA[<!DOCTYPE html><html><head>  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script></head><body>  <h1>Chat with GPT-3.5</h1>  <div id="chat"></div>  <div class="chat-input">    <input type="text" id="input" placeholder="Enter your message" />    <button onclick="sendMessage()">Send</button>  </div>  <script>    // 用于授权 API 请求的密钥    const apiKey = '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';    // 用于调用 GPT-3.5 API 的函数    async function generateText(prompt) {      const url = 'https://api.openai.com/v1/engines/davinci-codex/completions';      const headers = {        'Content-Type': 'application/json',        Authorization: `Bearer ${apiKey}`      };      const data = {        prompt,        max_tokens: 50,        n: 1,        stop: '\n'      };      const response = await axios.post(url, data, {        headers      });      return response.data.choices[0].text;    }    // 在聊天界面中添加一条消息    function addMessage(text, sender) {      const chat = document.getElementById('chat');      const message = document.createElement('div');      message.innerText = text;      message.classList.add(sender);      chat.appendChild(message);    }    // 发送消息的处理函数    async function sendMessage() {      // 获取输入的文本      const input = document.getElementById('input');      const text = input.value;      input.value = '';      // 发送消息并添加到聊天界面      addMessage(text, 'user');      const generatedText = await generateText(text);      addMessage(generatedText, 'bot');    }    // 监听回车键按下事件，按下后自动发送消息    const input = document.getElementById('input');    input.addEventListener('keyup', function (event) {      if (event.key === 'Enter') {        event.preventDefault();        sendMessage();      }    });  </script>  <style>    #chat {      height: 400px;      width: 100%;      overflow: scroll;    }    .user {      width: 100%;      background-color: #fff;      color: #333;      margin-bottom: 10px;    }    .bot {      width: 100%;      background-color: #f1f1f1;      color: #333;      margin-bottom: 10px;    }    .chat-input {      display: flex;      align-items: center;      padding: 10px;      background-color: #f4f4f4;      border-top: 1px solid #ddd;    }    .chat-input input[type="text"] {      flex: 1;      margin-right: 10px;      padding: 10px;      border: none;      border-radius: 5px;      font-size: 16px;    }    .chat-input button {      padding: 10px 20px;      border: none;      border-radius: 5px;      background-color: #007bff;      color: #fff;      font-size: 16px;      cursor: pointer;    }  </style></body></html>]]></content>
     
     
     
